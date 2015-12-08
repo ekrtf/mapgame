@@ -21,6 +21,8 @@ function map() {
             return _.camelCase(country.properties.name);
         });
 
+        $scope.countriesFound = [];
+
         $scope.$watch('userInput', function(userInput) {
             var input = _.camelCase(userInput);
 
@@ -34,6 +36,7 @@ function map() {
                         "fillKey": "FOUND"
                     };
                     $scope.userInput = '';
+                    $scope.countriesFound.push(country[0]);
                 }
             }
         });

@@ -1,7 +1,13 @@
 <div class="map">
-    <div class="form-group">
-        <input type="text" class="form-control" id="input" placeholder="Type country name" ng-model="userInput">
+    <div class="row">
+        <div class="map__imput form-group col-md-11">
+            <input type="text" class="form-control" id="input" placeholder="Type country name" ng-model="userInput">
+        </div>
+        <div class="map__counter col-md-1">
+            {{ countriesFound.length }}
+        </div>
     </div>
-    <datamap map="mapObject"></datamap>
-
+    <div class="map__datamap">
+        <datamap map="mapObject"></datamap>
+    </div>
 </div>
