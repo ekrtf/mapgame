@@ -1,0 +1,22 @@
+{
+  "name": "mapgame",
+  "version": "1.0.0",
+  "description": "world countries quizze",
+  "main": "server.js",
+  "scripts": {
+    "test": "node server.js"
+  },
+  "keywords": [
+    "map",
+    "game",
+    "world",
+    "countries",
+    "quizz",
+    "geography"
+  ],
+  "author": "Emile Kratiroff",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.13.3"
+  }
+}
