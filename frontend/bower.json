@@ -24,6 +24,8 @@
   "dependencies": {
     "angular": "~1.4.8",
     "d3": "~3.5.10",
-    "bootstrap": "~3.3.6"
+    "bootstrap": "~3.3.6",
+    "datamaps": "~0.4.0",
+    "angular-datamaps": "~0.1.2"
   }
 }
