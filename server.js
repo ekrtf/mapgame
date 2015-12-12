@@ -4,10 +4,7 @@ var fs      = require('fs');
 
 
 var App = function() {
-
-    //  Scope.
     var self = this;
-
 
     /*  ================================================================  */
     /*  Helper functions.                                                 */
@@ -18,14 +15,14 @@ var App = function() {
      */
     self.setupVariables = function() {
         //  Set the environment variables we need.
-        self.ipaddress = process.env.OPENSHIFT_NODEJS_IP || "localhost";
-        self.port      = process.env.OPENSHIFT_NODEJS_PORT || 2000;
+        self.ipaddress = 'localhost';
+        self.port      = 2000;
 
-        if (typeof self.ipaddress === "undefined") {
+        if (typeof self.ipaddress === 'undefined') {
             //  Log errors on OpenShift but continue w/ 127.0.0.1 - this
             //  allows us to run/test the app locally.
             console.warn('No OPENSHIFT_NODEJS_IP var, using 127.0.0.1');
-            self.ipaddress = "127.0.0.1";
+            self.ipaddress = '127.0.0.1';
         };
     };
 
@@ -34,7 +31,7 @@ var App = function() {
      *  Populate the cache.
      */
     self.populateCache = function() {
-        if (typeof self.zcache === "undefined") {
+        if (typeof self.zcache === 'undefined') {
             self.zcache = { 'frontend/index.html': '' };
         }
 
@@ -56,7 +53,7 @@ var App = function() {
      *  @param {string} sig  Signal to terminate on.
      */
     self.terminator = function(sig){
-        if (typeof sig === "string") {
+        if (typeof sig === 'string') {
            console.log('%s: Received %s - terminating sample app ...',
                        Date(Date.now()), sig);
            process.exit(1);
@@ -72,7 +69,6 @@ var App = function() {
         //  Process on exit and signals.
         process.on('exit', function() { self.terminator(); });
 
-        // Removed 'SIGPIPE' from the list - bugz 852598.
         ['SIGHUP', 'SIGINT', 'SIGQUIT', 'SIGILL', 'SIGTRAP', 'SIGABRT',
          'SIGBUS', 'SIGFPE', 'SIGUSR1', 'SIGSEGV', 'SIGUSR2', 'SIGTERM'
         ].forEach(function(element, index, array) {

@@ -25,8 +25,11 @@ function map() {
 
         $scope.$watch('userInput', function(userInput) {
             var input = _.camelCase(userInput);
+            var found = _.map($scope.countriesFound, function(country) {
+                return _.camelCase(country.properties.name);
+            });
 
-            if (_.includes(countryNames, input)) {
+            if (_.includes(countryNames, input) && !_.includes(found, input)) {
                 var country = _.filter(countries, function(country) {
                     return _.camelCase(country.properties.name) === input;
                 });
