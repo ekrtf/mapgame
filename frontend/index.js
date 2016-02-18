@@ -1,11 +1,8 @@
-/**
- * MAPGAME
- * @description world countries quize
- */
+(function() {
+    angular.module('mapGame', ['datamaps'])
+        .controller('mapGameCtrl', mapGameCtrl);
 
-angular.module('mapGame', ['datamaps'])
-    .controller('mapGameCtrl', mapGameCtrl);
+    function mapGameCtrl() {
 
-function mapGameCtrl() {
-
-}
+    }
+})();

@@ -1,20 +1,19 @@
-/**
- * CONTROLS - directive
- * @description input, timer and progressbar
- */
+(function() {
+    
+    angular.module('mapGame')
+        .directive('controls', controls);
 
-angular.module('mapGame')
-    .directive('controls', controls);
+    function controls() {
+        return {
+            templateUrl: 'components/controls/controls.html',
+            restrict: 'E',
+            scope: {},
+            controller: controlsCtrl
+        };
 
-function controls() {
-    return {
-        templateUrl: 'components/controls/controls.html',
-        restrict: 'E',
-        scope: {},
-        controller: controlsCtrl
-    };
+        function controlsCtrl($scope) {
 
-    function controlsCtrl($scope) {
-
+        }
     }
-}
+
+})();
